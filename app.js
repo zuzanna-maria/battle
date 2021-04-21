@@ -32,21 +32,85 @@ app.post('/name', (req, res) => {
 })
 
 
-app.post('/turn', (req, res) => {
+app.post('/turn1', (req, res) => {
   battle.turn()
   console.log(battle.currentPlayer().name)
   console.log(battle.currentPlayer().health)
   console.log(battle.otherPlayer().name)
   console.log(battle.otherPlayer().health)
-  res.render('turn.ejs', {
-
+  res.render('turn.ejs',{ 
     currentPlayerName: battle.currentPlayer().name,
     currentPlayerHealth: battle.currentPlayer().health,
     otherPlayerName: battle.otherPlayer().name,
-    otherPlayerHealth: battle.otherPlayer().health
+    otherPlayerHealth: battle.otherPlayer().health  
   })
   battle.switch()
 })
+
+app.post('/turn2', (req, res) => {
+  battle.riskturn()
+  console.log(battle.currentPlayer().name)
+  console.log(battle.currentPlayer().health)
+  console.log(battle.otherPlayer().name)
+  console.log(battle.otherPlayer().health)
+  res.render('turn.ejs',{ 
+    currentPlayerName: battle.currentPlayer().name,
+    currentPlayerHealth: battle.currentPlayer().health,
+    otherPlayerName: battle.otherPlayer().name,
+    otherPlayerHealth: battle.otherPlayer().health  
+  })
+  battle.switch()
+})
+
+
+app.post('/turn3', (req, res) => {
+  battle.paraturn()
+  console.log(battle.currentPlayer().name)
+  console.log(battle.currentPlayer().health)
+  console.log(battle.otherPlayer().name)
+  console.log(battle.otherPlayer().health)
+  res.render('turn.ejs',{ 
+    currentPlayerName: battle.currentPlayer().name,
+    currentPlayerHealth: battle.currentPlayer().health,
+    otherPlayerName: battle.otherPlayer().name,
+    otherPlayerHealth: battle.otherPlayer().health  
+  })
+  if(Math.random() < 0.5){
+  battle.switch()
+  }
+})
+
+app.post('/turn4', (req, res) => {
+  battle.poisonturn()
+  console.log(battle.currentPlayer().name)
+  console.log(battle.currentPlayer().health)
+  console.log(battle.otherPlayer().name)
+  console.log(battle.otherPlayer().health)
+  res.render('turn.ejs',{ 
+    currentPlayerName: battle.currentPlayer().name,
+    currentPlayerHealth: battle.currentPlayer().health,
+    otherPlayerName: battle.otherPlayer().name,
+    otherPlayerHealth: battle.otherPlayer().health  
+  })
+  battle.switch()
+})
+
+app.post('/turn5', (req, res) => {
+  battle.healturn()
+  console.log(battle.currentPlayer().name)
+  console.log(battle.currentPlayer().health)
+  console.log(battle.otherPlayer().name)
+  console.log(battle.otherPlayer().health)
+  res.render('turn.ejs',{ 
+    currentPlayerName: battle.currentPlayer().name,
+    currentPlayerHealth: battle.currentPlayer().health,
+    otherPlayerName: battle.otherPlayer().name,
+    otherPlayerHealth: battle.otherPlayer().health  
+  })
+  battle.switch()
+})
+
+
 
 app.get('/name', (req, res) => {
   const player = battle.currentPlayer()

@@ -2,6 +2,7 @@ class Battle {
 
   constructor() {
     this.players = []
+    this.poisoned =[false,false]
   }
 
   add(player) {
@@ -22,6 +23,41 @@ class Battle {
 
   turn() {
     this.otherPlayer().takeDamage()
+    this.ispoisoned()
+  }
+
+  riskturn() {
+    this.otherPlayer().takerandomDamage()
+    this.ispoisoned()
+  }
+
+  paraturn() {
+    this.otherPlayer(). takeparalysisDamage()
+    this.ispoisoned()
+  }
+
+  poisonturn() {
+    this.otherPlayer(). takepoisonDamage()
+    if(Math.random() > 0.5){
+      this.poisoned[1] = true
+    }
+    this.ispoisoned()
+  } 
+
+  sleepturn() {
+    this.otherPlayer(). takesleepDamage()
+    this.ispoisoned()
+  }
+
+  healturn() {
+    this.currentPlayer(). healDamage()
+    this.ispoisoned()
+    this.poisoned[0] = false
+  }
+  ispoisoned(){
+    if(this.poisoned[1]){
+    this.otherPlayer. takepoisonedDamage()
+    }
   }
 
 }

@@ -9,8 +9,22 @@
       <h1>Current player HP is: <%= health1 %> </h1>
       <h1>Other player is <%= name2 %> </h1>
       <h1>Other player HP is: <%= health2 %> </h1>
-    <form action="/turn" method="post">
-      <input type="submit" value="attack">
+    <form action="/turn1" method="POST">
+      <input type="submit" value="attack" >
     </form>
+    <form action="/turn2" method="POST">
+      <input type="submit" value="riskattack"  >
+    </form>
+    <form action="/turn3" method="POST">
+      <input type="submit" value="paralyse"  >
+    </form>
+    <form action="/turn4" method="POST">
+      <input type="submit" value="poison"  >
+    </form>
+    <form action="/turn5" method="POST">
+      <input type="submit" value="heal"  >
+    </form>
+
+
     </body>
   </html>
