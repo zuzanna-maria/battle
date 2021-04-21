@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> </title>
+    </head>
+    <body>
+
+      <h1>Current player is <%= currentPlayerName %>, HP: <%= currentPlayerHealth %> </h1>
+      <h1><%= currentPlayerName %> deals 10HP damage to <%= otherPlayerName %></h1>
+      <h1>Other player is <%= otherPlayerName %>, HP <%= otherPlayerHealth %> </h1>
+
+    <form action="/name" method="get">
+      <input type="submit" value="end turn">
+    </form>
+    </body>
+  </html>
